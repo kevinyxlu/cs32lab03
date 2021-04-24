@@ -54,3 +54,10 @@ int demogData::getHSupCount() const
     count = (popHighSchoolEduPlus / 100) * totalPopulation2014; //calculate the count
     return count;
 }
+
+int demogData::getPovertyCount() const
+{
+    int count;
+    count = (popInPoverty / 100) * totalPopulation2014; //calculate the count
+    return count;
+}

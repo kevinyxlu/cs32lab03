@@ -4,6 +4,7 @@
 #include <memory>
 #include <string>
 #include <iostream>
+#include <vector>
 #include "demogData.h"
 
 /*
@@ -17,31 +18,33 @@ class demogState {
     // constructor with no arguments puts -1 for all values as stud values
     demogState() {}
 
+    //constructor with two arguments: the abbreviation of the state and a vector 
+    demogState(string state, vector<shared_ptr<demogData>> countyData);
 
     friend std::ostream& operator<<(std::ostream &out, const demogState &SD);
 
 
 	private:
     // state information
-    const string state = "TOUPDATE"; // name of the state
-    const int totalPopulation = -1; // the population of the state
-    const int numCounties = -1; // number of counties imn the state
+    string stateName = "TOUPDATE"; // name of the state
+    int totalPopulation = -1; // the population of the state
+    int numCounties = -1; // number of counties imn the state
 
     // percentage data
-    const double percentOver65 = -1; // age above 65
-    const double percentUnder18 = -1; // age under 18
-    const double percentUnder5 = -1; // age under 5
-    const double percentBachelorPlus = -1; // bachelor degree or more
-    const double percentHSPlus = -1; // high school educated or more
-    const double percentPoverty = -1; // below poverty
+    double percentOver65 = -1; // age above 65
+    double percentUnder18 = -1; // age under 18
+    double percentUnder5 = -1; // age under 5
+    double percentBachelorPlus = -1; // bachelor degree or more
+    double percentHSPlus = -1; // high school educated or more
+    double percentPoverty = -1; // below poverty
 
     // count data
-    const int countOver65 = -1; // age above 65
-    const int countUnder18 = -1; // age under 18
-    const int countUnder5 = -1; // age under 5
-    const int countBachelorPlus = -1; // bachelor degree or more
-    const int countHSPlus = -1; // high school educated or more
-    const int countPoverty = -1; // below poverty
+    int countOver65 = -1; // age above 65
+    int countUnder18 = -1; // age under 18
+    int countUnder5 = -1; // age under 5
+    int countBachelorPlus = -1; // bachelor degree or more
+    int countHSPlus = -1; // high school educated or more
+    int countPoverty = -1; // below poverty
 
 	//DATA here
 };

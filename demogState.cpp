@@ -23,7 +23,7 @@ std::ostream& operator<<(std::ostream &out, const demogState&SD) {
     // persons below poverty: 12.67% and total: 372832
     // Total population: 2942902
 
-    out << "State Info: " << SD.state << endl; // State Info: UT
+    out << "State Info: " << SD.stateName << endl; // State Info: UT
     out << "Number of Counties: " << SD.numCounties << endl; // Number of Counties: 29   
     out << "Population Info:\n"; // Population Info:
     out << "(over 65): " << SD.percentOver65 << "% and total: " << SD.countOver65 << endl; // (over 65): 10.03% and total: 295146
@@ -35,4 +35,38 @@ std::ostream& operator<<(std::ostream &out, const demogState&SD) {
     out << "persons below poverty: " << SD.percentPoverty << "% and total: " << SD.countPoverty << endl;// persons below poverty: 12.67% and total: 372832
     out << "Total population: " << SD.totalPopulation << endl; // Total population: 2942902
     return out;
+}
+
+demogState::demogState(string state, vector<shared_ptr<demogData>> countyData)
+{
+    stateName = state; // set name of the state
+    numCounties = countyData.size(); // size of the vector should be the number of counties
+
+    // set all the counts to 0 to prepare to iterate through vector
+    totalPopulation = 0;
+    countOver65 = 0;
+    countUnder18 = 0;
+    countUnder5 = 0;
+    countBachelorPlus = 0;
+    countHSPlus = 0;
+    countPoverty = 0;
+
+    for(int i = 0; i < countyData.size(); i++) // iterate through all counties in the state to get all counts for the state
+    {
+        // aggregate the data counts for the states
+        totalPopulation = totalPopulation + countyData[i]->getPop(); // aggregate population
+        countOver65 = countOver65 + countyData[i]->getpopOver65Count(); // aggregate countOver65
+        countUnder18 = countUnder18 + countyData[i]->getpopUnder18Count(); // aggregate countUnder18
+        countUnder5 = countUnder5 + countyData[i]->getpopUnder5Count();
+        countBachelorPlus = countBachelorPlus + countyData[i]->getBAupCount();
+        countHSPlus = countHSPlus + countyData[i]->getHSupCount();
+        countPoverty = countPoverty + countyData[i]->getPovertyCount();
+    }
+
+    percentOver65 = (countOver65 / totalPopulation) * 100; // calculate the percent age above 65
+    percentUnder18 = (countUnder18 / totalPopulation) * 100; // calculate the percent age under 18
+    percentUnder5 = (countUnder5 / totalPopulation) * 100; // calculate the percent age under 5
+    percentBachelorPlus = (countBachelorPlus / totalPopulation) * 100; // calculate the percent bachelor degree or more
+    percentHSPlus = (countHSPlus / totalPopulation) * 100; // calculate the percent high school educated or more
+    percentPoverty = (countPoverty / totalPopulation) * 100; // calculate the percent below poverty
 }

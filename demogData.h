@@ -22,6 +22,11 @@ class demogData {
             name(inN), state(inS), popOver65(in65), popUnder18(in18),
             popUnder5(in5), popBachelorEduPlus(inBach), popHighSchoolEduPlus(inHigh), totalPopulation2014(totPop14) {}
 
+    demogData(string inN, string inS, double in65, double in18,
+        double in5, double inBach, double inHigh, double inPov, int totPop14) : 
+            name(inN), state(inS), popOver65(in65), popUnder18(in18),
+            popUnder5(in5), popBachelorEduPlus(inBach), popHighSchoolEduPlus(inHigh), popInPoverty(inPov), totalPopulation2014(totPop14) {}
+
     string getName() const { return name; }
     string getState() const { return state; }
     double getpopOver65() const { return popOver65; }
@@ -30,12 +35,14 @@ class demogData {
     int getPop() const { return totalPopulation2014; }
     double getBAup() const { return popBachelorEduPlus; }
     double getHSup() const { return popHighSchoolEduPlus; }
+    double getPoverty() const { return popInPoverty; }
 
     int getpopOver65Count() const;
     int getpopUnder18Count() const;
     int getpopUnder5Count() const;
     int getBAupCount() const;
     int getHSupCount() const;
+    int getPovertyCount() const;
 
    friend std::ostream& operator<<(std::ostream &out, const demogData &DD); 
    //the friend in front means this function can access private vars even though
@@ -50,5 +57,6 @@ private:
     const int totalPopulation2014;
     const double popBachelorEduPlus;
     const double popHighSchoolEduPlus;
+    const double popInPoverty = -1;
 };
 #endif

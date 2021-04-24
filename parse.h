@@ -36,5 +36,8 @@ std::vector<shared_ptr<demogData> > read_csv(std::string filename, typeFlag file
 // Read one line from a CSV file for county demographic data specifically
 shared_ptr<demogData> readCSVLineDemog(std::string theLine);
 
+// Read one line from a CSV file to aggregate county data into state data.
+shared_ptr<demogData> readCSVLineDemogCounty(std::string theLine);
+
 
 #endif

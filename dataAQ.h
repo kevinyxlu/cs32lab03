@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <cmath>
 #include "demogState.h"
 
 /*
@@ -39,7 +40,8 @@ class dataAQ {
 
     //core data private for dataAQ
     private:
-       //Decide how to aggregate the data into a map ADD here
+      //Decide how to aggregate the data into a map ADD here
+      map<string, shared_ptr<demogState>> stateData; // in the form of <state, statedemogData>
 
 };
 #endif
