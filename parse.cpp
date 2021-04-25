@@ -185,7 +185,8 @@ std::vector<shared_ptr<demogData> > read_csv(std::string filename, typeFlag file
         // Now read data, line by line and create demographic dataobject
         while(std::getline(myFile, line)) {
             if (fileType == DEMOG) {
-                theData.push_back(readCSVLineDemog(line));
+                //theData.push_back(readCSVLineDemog(line));
+                theData.push_back(readCSVLineDemogCounty(line));
             } else {
                 cout << "ERROR - unknown file type" << endl;
                 exit(0);

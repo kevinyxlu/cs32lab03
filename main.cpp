@@ -37,19 +37,49 @@ int main() {
 
     //NOW fill in these too
     cout << "*** the state that needs the most high schools**" << endl;
-    //FILL IN 
+    needPK = theAnswers.teenPop();
+    cout << "Name of state: " << needPK << endl;
+    if (theAnswers.getStateData(needPK) != nullptr){
+        cout << *(theAnswers.getStateData(needPK)) << endl;
+    } else{
+        cout << "state ptr getter failed" << endl;
+    }
 
     cout << "*** the state that needs the most vaccines**" << endl;
-    //FILL IN 
+    needPK = theAnswers.wisePop();
+    cout << "Name of state: " << needPK << endl;
+    if (theAnswers.getStateData(needPK) != nullptr){
+        cout << *(theAnswers.getStateData(needPK)) << endl;
+    } else{
+        cout << "state ptr getter failed" << endl;
+    }
 
     cout << "*** the state that needs the most help with education**" << endl;
-    //FILL IN 
+    needPK = theAnswers.underServeHS();
+    cout << "Name of state: " << needPK << endl;
+    if (theAnswers.getStateData(needPK) != nullptr){
+        cout << *(theAnswers.getStateData(needPK)) << endl;
+    } else{
+        cout << "state ptr getter failed" << endl;
+    }
 
     cout << "*** the state with most college grads**" << endl;
-    //FILL IN 
+    needPK = theAnswers.collegeGrads();
+    cout << "Name of state: " << needPK << endl;
+    if (theAnswers.getStateData(needPK) != nullptr){
+        cout << *(theAnswers.getStateData(needPK)) << endl;
+    } else{
+        cout << "state ptr getter failed" << endl;
+    }
 
     cout << "*** the state with largest percent of the population below the poverty line**" << endl;
-    //FILL IN
+    needPK = theAnswers.belowPoverty();
+    cout << "Name of state: " << needPK << endl;
+    if (theAnswers.getStateData(needPK) != nullptr){
+        cout << *(theAnswers.getStateData(needPK)) << endl;
+    } else{
+        cout << "state ptr getter failed" << endl;
+    }
 
     return 0;
 }

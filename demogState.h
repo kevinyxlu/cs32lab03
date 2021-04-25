@@ -21,6 +21,21 @@ class demogState {
     //constructor with two arguments: the abbreviation of the state and a vector 
     demogState(string state, vector<shared_ptr<demogData>> countyData);
 
+    string getState() const { return stateName; }
+    double getpopOver65() const { return percentOver65; }
+    double getpopUnder18() const { return percentUnder18; }
+    double getpopUnder5() const { return percentUnder5; }
+    double getBAup() const { return percentBachelorPlus; }
+    double getHSup() const { return percentHSPlus; }
+    double getPoverty() const { return percentPoverty; }
+    /*
+    int getpopOver65Count() const { return countOver65; }
+    int getpopUnder18Count() const { return countUnder18; }
+    int getpopUnder5Count() const { return countUnder5; }
+    int getBAupCount() const { return countBachelorPlus; }
+    int getPop() const { return totalPopulation; }
+    int getHSupCount() const { return countHSPlus; }
+    int getPovertyCount() const { return countPoverty; }*/
     friend std::ostream& operator<<(std::ostream &out, const demogState &SD);
 
 

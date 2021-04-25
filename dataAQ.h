@@ -5,7 +5,6 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include <cmath>
 #include "demogState.h"
 
 /*
@@ -33,15 +32,15 @@ class dataAQ {
     string belowPoverty(); 
 
     //getter given a state name return a pointer to demogState data
-    shared_ptr<demogState> getStateData(string stateName) { /*fix this*/  return nullptr; }
+    shared_ptr<demogState> getStateData(string stateName) { /*fix this*/  return theStates[stateName]; }
     
     //must implement output per aggregate data
     friend std::ostream& operator<<(std::ostream &out, const dataAQ &allStateData);
 
     //core data private for dataAQ
     private:
-      //Decide how to aggregate the data into a map ADD here
-      map<string, shared_ptr<demogState>> stateData; // in the form of <state, statedemogData>
+       //Decide how to aggregate the data into a map ADD here
+       map<std::string, shared_ptr<demogState>> theStates;
 
 };
 #endif

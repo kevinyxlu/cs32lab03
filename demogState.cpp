@@ -63,10 +63,10 @@ demogState::demogState(string state, vector<shared_ptr<demogData>> countyData)
         countPoverty = countPoverty + countyData[i]->getPovertyCount();
     }
 
-    percentOver65 = (countOver65 / totalPopulation) * 100; // calculate the percent age above 65
-    percentUnder18 = (countUnder18 / totalPopulation) * 100; // calculate the percent age under 18
-    percentUnder5 = (countUnder5 / totalPopulation) * 100; // calculate the percent age under 5
-    percentBachelorPlus = (countBachelorPlus / totalPopulation) * 100; // calculate the percent bachelor degree or more
-    percentHSPlus = (countHSPlus / totalPopulation) * 100; // calculate the percent high school educated or more
-    percentPoverty = (countPoverty / totalPopulation) * 100; // calculate the percent below poverty
+    percentOver65 = (countOver65 / double(totalPopulation)) * 100; // calculate the percent age above 65
+    percentUnder18 = (countUnder18 / double(totalPopulation)) * 100; // calculate the percent age under 18
+    percentUnder5 = (countUnder5 / double(totalPopulation)) * 100; // calculate the percent age under 5
+    percentBachelorPlus = (countBachelorPlus / double(totalPopulation)) * 100; // calculate the percent bachelor degree or more
+    percentHSPlus = (countHSPlus / double(totalPopulation)) * 100; // calculate the percent high school educated or more
+    percentPoverty = (countPoverty / double(totalPopulation)) * 100; // calculate the percent below poverty
 }
