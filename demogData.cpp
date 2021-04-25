@@ -1,5 +1,6 @@
 #include "demogData.h"
 #include <sstream>
+#include <cmath>
 
 /* print county demographic data */
 std::ostream& operator<<(std::ostream &out, const demogData &DD) {
@@ -23,41 +24,41 @@ std::ostream& operator<<(std::ostream &out, const demogData &DD) {
 int demogData::getpopOver65Count() const
 {
     int count;
-    count = (popOver65 / 100) * totalPopulation2014; //calculate the count
+    count = round((popOver65 / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getpopUnder18Count() const
 {
     int count;
-    count = (popUnder18 / 100) * totalPopulation2014; //calculate the count
+    count = round((popUnder18 / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getpopUnder5Count() const
 {
     int count;
-    count = (popUnder5 / 100) * totalPopulation2014; //calculate the count
+    count = round((popUnder5 / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getBAupCount() const
 {
     int count;
-    count = (popBachelorEduPlus / 100) * totalPopulation2014; //calculate the count
+    count = round((popBachelorEduPlus / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getHSupCount() const
 {
     int count;
-    count = (popHighSchoolEduPlus / 100) * totalPopulation2014; //calculate the count
+    count = round((popHighSchoolEduPlus / 100) * totalPopulation2014); //calculate the count
     return count;
 }
 
 int demogData::getPovertyCount() const
 {
     int count;
-    count = (popInPoverty / 100) * totalPopulation2014; //calculate the count
+    count = round((popInPoverty / 100) * totalPopulation2014); //calculate the count
     return count;
 }
