@@ -9,7 +9,7 @@
 3    "Age.Percent 65 and Older",
 4    "Age.Percent Under 18 Years",
 5    "Age.Percent Under 5 Years",
-    "Education.Bachelor's Degree or Higher",
+6    "Education.Bachelor's Degree or Higher",
     "Education.High School or Higher",
     "Employment.Nonemployer Establishments",
     "Employment.Private Non-farm Employment",

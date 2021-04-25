@@ -90,9 +90,9 @@ string dataAQ::collegeGrads() {
 	double record = 0;
   string usurper = "";
   for (auto state : theStates) {
-    if ((100.0 - state.second->getBAup()) > record) { 
+    if ((state.second->getBAup()) > record) { 
       usurper = state.first;
-      record = 100.0 - state.second->getBAup();
+      record = state.second->getBAup();
     }
   }
   return usurper; 
