@@ -24,7 +24,8 @@ std::ostream& operator<<(std::ostream &out, const demogState&SD) {
     // persons below poverty: 12.67% and total: 372832
     // Total population: 2942902
     
-    cout.precision(4);
+    cout << fixed;
+    cout.precision(2);
     out << "State Info: " << SD.stateName << endl; // State Info: UT
     out << "Number of Counties: " << SD.numCounties << endl; // Number of Counties: 29   
     out << "Population Info:\n"; // Population Info:

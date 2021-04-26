@@ -1,3 +1,7 @@
+// Spring 2021 CS32 lab03
+// Created by: Kevin Lu and Kevin Lai
+// Created on: 04/25/2021
+
 #include <iostream>
 #include <string>
 #include <fstream>
