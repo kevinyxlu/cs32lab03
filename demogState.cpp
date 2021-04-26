@@ -4,6 +4,7 @@
 #include <string>
 #include <assert.h>
 #include <iomanip>
+using namespace std;
 
 //add member functions here
 
@@ -22,7 +23,8 @@ std::ostream& operator<<(std::ostream &out, const demogState&SD) {
     // (high school or more): 91.01% and total: 2678412
     // persons below poverty: 12.67% and total: 372832
     // Total population: 2942902
-
+    
+    cout.precision(4);
     out << "State Info: " << SD.stateName << endl; // State Info: UT
     out << "Number of Counties: " << SD.numCounties << endl; // Number of Counties: 29   
     out << "Population Info:\n"; // Population Info:
